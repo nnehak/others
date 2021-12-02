@@ -1,11 +1,12 @@
 package com.neha.gs.one;
 
-public class SquareRoot {
+public class SquareRootTODO {
 	
 	public static void main(String[] args) {
-		System.out.println(root(100) == 10);
-		System.out.println(root(4) == 2);
-		System.out.println(root(2) == 1.41421);
+		double threshold=0.001;
+		System.out.println(root(100) - 10 > threshold == false);
+		System.out.println(root(4) -2 > threshold == false);
+		System.out.println(root(2) - 1.41421 > threshold == false);
 	}
 
 	public static double root(double num){

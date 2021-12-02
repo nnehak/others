@@ -4,10 +4,12 @@ package com.neha.gs.one;
 public class WalkingRobot {
 	public static void main(String[] args) {
 		String input = "UDDLRL";
-		System.out.println(position(input));
+		System.out.println(position("ULDR").equals("0,0"));
+		System.out.println(position("UUU").equals("0,3"));
+		System.out.println(position("UP LEFT 2*DOWN DOWN RIGHT RIGHT UP UP").equals("1,1"));
 	}
 	
-	public static Coordinate position(String in){
+	public static String position(String in){
 		Coordinate c = new Coordinate(0,0);
 		int upCount=0, downCount=0, lCount=0, rCount =0;
 		for(int i=0;i<in.length();i++){
@@ -25,7 +27,7 @@ public class WalkingRobot {
 			c.x=rCount-lCount;
 			c.y=upCount-downCount;
 		}
-		return c;
+		return c.toString();
 	}
 
 }

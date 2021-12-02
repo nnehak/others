@@ -11,40 +11,38 @@ package com.neha.gs.two;
 public class DistanceBetweenStrings {
 	
 	public static void main(String[] args) {
-		System.out.println(shortestDistance("this.is.a.sample.document.we.just.made.up", "we", "just"));
+		String doc = "this is a sample document we just made up";
+		System.out.println(shortestDistance(doc, "we", "just") == 4);
+		System.out.println(shortestDistance(doc, "is", "a") == 2.5);
+		System.out.println(shortestDistance(doc, "is", "not") == -1);
 	}
 	
 	public static double shortestDistance(String doc, String word1, String word2){
-		double shortest = doc.length();
-		String[] words = doc.split("[,.]");
-		for(String w:words){
-			System.out.println(w);
-		}
-		
+		String[] words = doc.split("[,. ]");
 		int index = 0;
 		double word1Loc=0;
 		double word2Loc=0;
-		double currLen = doc.length();
+		double shortest = doc.length();
 		
 		for(String s : words){
 			if(word1.equalsIgnoreCase(s)){
-				word1Loc= (index)+s.length()/2;
-				System.out.println(word1Loc);
+				word1Loc= index+(s.length()/2d);
 			}else if(word2.equalsIgnoreCase(s)) {
-				word2Loc=(index+(s.length()/2));
-				System.out.println(word2Loc);
+				word2Loc=index+(s.length()/2d);
 			}
 			
 			if(word1Loc>0 && word2Loc>0){
-				currLen=Math.abs(word1Loc-word2Loc);
+				double current=Math.abs(word1Loc-word2Loc);
+				if(current<shortest){
+					shortest=current;
+				}
 			}
-			if(currLen<shortest){
-				shortest=currLen;
-			}
-			
+
 			index+=s.length()+1;
 		}
-		
+		if(word1Loc==0 || word2Loc==0){
+			return -1;
+		}
 		return shortest;
 	}
 	

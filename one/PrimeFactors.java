@@ -3,9 +3,15 @@ package com.neha.gs.one;
 public class PrimeFactors {
 	
 	public static void main(String[] args) {
+		factorize(6);
 		factorize(5);
+		factorize(12);
 	}
-	
+
+	//6 ->2,3
+	//5 -> 5
+	//12 -> 2,2,3
+
 	public static void factorize(int n){
 		StringBuilder sb = new StringBuilder();
 		

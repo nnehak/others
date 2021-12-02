@@ -3,8 +3,15 @@ package com.neha.gs.two;
 //https://leetcode.com/problems/string-to-integer-atoi/description/
 public class Atoi {
 	public static void main(String[] args) {
-		String in = "-91283472332";
-		System.out.println(atoi(in));
+		boolean result = true;
+		result = result && atoi("0") == 0;
+		result = result && atoi("123") == 123;
+		result = result && atoi("1") == 1;
+		result = result && atoi("-1") == -1;
+		result = result && atoi("-123") == -123;
+		result = result && atoi("123a") == 123;
+		result = result && atoi("a") == 0;
+		System.out.println(result);
 	}
 	
 	public static int atoi(String s){

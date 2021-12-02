@@ -7,7 +7,12 @@ package com.neha.gs.two;
 
 public class OptimalPath {
 	public static void main(String[] args) {
-		System.out.println(optimalPath(new Integer[][]{{0,0,0,0,5},{0,1,1,1,0},{2,0,0,0,0}})==10);
+		System.out.println(optimalPath(new Integer[][]{
+				{0,0,0,0,5},
+				{0,1,1,1,0},
+				{2,0,0,0,0}
+		})==10);
+		//path will be 2+0+1+1+1+5
 	}
 
 	public static Integer optimalPath(Integer[][] grid) {

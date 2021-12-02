@@ -1,6 +1,6 @@
 package com.neha.gs.one;
 
-public class DotProduct {
+public class DotProductToDO {
 
     //given 2 arrays of string return their dotProduct
     public static int dotProduct(int[] arr1, int[] arr2){

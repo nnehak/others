@@ -1,2 +1,4 @@
-package com.neha.gs.one;public class PascalsTriangleTODO {
+package com.neha.gs.one;
+
+public class PascalsTriangleTODO {
 }

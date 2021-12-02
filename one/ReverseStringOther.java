@@ -1,27 +1,24 @@
 package com.neha.gs.one;
 
-public class ReverseString {
-	public static void main(String[] args) {
-		 String st =""; 
-				 //new String("Coding.is.a.super.fun");
-		//Scanner sc = new Scanner(System.in);
-		//int stringCount = sc.nextInt();
-		//for (int i = 0; i < stringCount; i++) {
-			//String st = sc.next();
-			String[] words = st.split("\\."); //delimiter is .
-			int mid = words.length / 2;
-			for (int j = 0; j < mid; j++) {
-				String tmp = words[j];
-				words[j] = words[words.length - 1 - j];
-				words[words.length - 1 - j] = tmp;
-			}
-			StringBuilder b = new StringBuilder();
-			for (String s : words) {
-				b.append(s);
-				b.append(".");
-			}
-			System.out.println(b.toString().substring(0, b.toString().length()-1));
-			b = new StringBuilder();
-		//}
-	}
+public class ReverseStringOther {
+    public static void main(String[] args) {
+        System.out.println("dcba".equals(reverseStr("abcd")));
+        //System.out.println("no change".equals(reverseStr("no change")));
+        System.out.println("odd abcde".equals(reverseStr("edcba ddo")));
+        System.out.println("even abcde".equals(reverseStr("edcba neve")));
+        System.out.println("".equals(reverseStr("")));
+
+    }
+
+    public static String reverseStr(String str) {
+        if (str.length() == 0) {
+            return str;
+        }
+        int strLength = str.length();
+        StringBuilder sb = new StringBuilder(strLength);
+        for (int i = strLength - 1; i >= 0; i--) {
+            sb.append(str.charAt(i));
+        }
+        return sb.toString();
+    }
 }

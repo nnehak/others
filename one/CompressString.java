@@ -1,8 +1,13 @@
 package com.neha.gs.one;
 //input aaabbbc out put a3b3c1
 public class CompressString {
+	//runlenght encoding
 	public static void main(String[] args) {
 		String input = "aaabbbc";
+		System.out.println("a3b3c1".equals("aaabbbc"));
+	}
+
+	public static String compress(String input){
 		int freqCount = 0;
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < input.length(); i++) {
@@ -16,7 +21,7 @@ public class CompressString {
 			freqCount = 1;
 
 		}
-		System.out.println(sb.toString());
+		return sb.toString();
 	}
 
 }

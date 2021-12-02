@@ -7,7 +7,10 @@ public class FirstNonRepeating {
 	
 	public static void main(String[] args) {
 		String input = "geeksforgeeks";
-		System.out.println(firstNon(input));
+		System.out.println(firstNon(input).equals('f'));
+		//System.out.println(firstNon("xxyyzz").equals(0));
+		System.out.println(firstNon("apple").equals('a'));
+		System.out.println(firstNon("racecars").equals('e'));
 	}
 	
 	public static Character firstNon(String input){
